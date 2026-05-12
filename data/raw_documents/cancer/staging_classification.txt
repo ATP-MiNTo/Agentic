@@ -1,0 +1,14 @@
+[PLACEHOLDER - ADD CONTENT HERE]
+
+Title: Cancer Staging and Classification
+Source: [Add source]
+Last Updated: [Add date]
+
+---
+
+Add content about:
+- TNM staging system
+- Stage 0, 1, 2, 3, 4 definitions
+- How staging affects treatment
+- Grading vs staging
+- Importance of accurate staging

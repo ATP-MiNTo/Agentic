@@ -1,0 +1,16 @@
+[PLACEHOLDER - ADD CONTENT HERE]
+
+Title: Cancer Treatment Options
+Source: [Add source]
+Last Updated: [Add date]
+
+---
+
+Add content about:
+- Surgery
+- Chemotherapy
+- Radiation therapy
+- Immunotherapy
+- Targeted therapy
+- Combination treatments
+- Clinical trials

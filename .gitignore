@@ -1,0 +1,101 @@
+# Git ignore file for Medical RAG PoC
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv
+env/
+venv/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Logs (but keep the logs directory)
+logs/*.log
+
+# Model files (large, should be downloaded)
+*.faiss
+*.bin
+*.pt
+*.pth
+
+# Cache
+.cache/
+.ipynb_checkpoints/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+temp/
+tmp/
+
+# Document caches
+.doctrees/
+
+# Generated files
+*.pyc
+*.pyo
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# IDE specific
+.pylintrc
+.pylint.d/
+
+# Node (if any frontend)
+node_modules/
+dist/
+build/
+
+# Keep these directories
+!logs/.gitkeep
+!data/.gitkeep
+!data/raw_documents/.gitkeep
+!data/faiss_index/.gitkeep

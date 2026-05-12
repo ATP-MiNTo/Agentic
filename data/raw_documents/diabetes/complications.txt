@@ -1,0 +1,16 @@
+[PLACEHOLDER - ADD CONTENT HERE]
+
+Title: Diabetes Complications
+Source: [Add source]
+Last Updated: [Add date]
+
+---
+
+Add content about:
+- Short-term complications
+- Long-term complications
+- Heart disease and diabetes
+- Kidney disease
+- Neuropathy
+- Retinopathy
+- Prevention strategies
