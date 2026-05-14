@@ -17,7 +17,7 @@ for dir_path in [DATA_DIR, FAISS_INDEX_DIR, LOG_DIR]:
 # ==================== MODEL CONFIGURATION ====================
 
 # LLM Configuration
-LLM_MODEL = "llama-3.1-8b-instruct"  # Via Ollama
+LLM_MODEL = "llama3.1:8b"  # Via Ollama
 LLM_ENDPOINT = "http://localhost:11434"  # Ollama local endpoint
 LLM_TIMEOUT = 60  # seconds
 

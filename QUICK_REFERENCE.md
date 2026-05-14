@@ -172,7 +172,7 @@ Key settings in `config.py`:
 
 ```python
 # Models
-LLM_MODEL = "llama-3.1-8b-instruct"
+LLM_MODEL = "llama3.1:8b"
 EMBEDDING_MODEL = "BAAI/bge-small-en-v1.5"
 
 # Retrieval

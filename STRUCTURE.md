@@ -340,7 +340,7 @@ REASONING_PROMPT = """Show your thinking process step by step..."""
 **Key Settings**:
 ```python
 # Model Configuration
-LLM_MODEL = "llama-3.1-8b-instruct"
+LLM_MODEL = "llama3.1:8b"
 EMBEDDING_MODEL = "BAAI/bge-small-en-v1.5"
 
 # RAG Configuration

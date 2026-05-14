@@ -144,7 +144,7 @@ Edit `config.py` to customize:
 
 ```python
 # Model
-LLM_MODEL = "llama-3.1-8b-instruct"  # or "mistral:7b-instruct"
+LLM_MODEL = "llama3.1:8b"  # or "mistral:7b-instruct"
 EMBEDDING_MODEL = "BAAI/bge-small-en-v1.5"
 
 # Retrieval

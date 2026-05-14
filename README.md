@@ -21,7 +21,7 @@ Think of it as a **smart medical Q&A system** that knows where its answers come 
 
 | Component | Technology | Why |
 |-----------|-----------|-----|
-| **LLM** | Llama-3.1-8B-Instruct (open-source) | Runs locally, no API costs, customizable |
+| **LLM** | llama3.1:8b (open-source) | Runs locally, no API costs, customizable |
 | **Embeddings** | BAAI/bge-small-en-v1.5 | Lightweight, accurate semantic search |
 | **Vector DB** | FAISS | Fast semantic search, no server needed |
 | **Interface** | Gradio (web) + CLI | Interactive, zero-config, collapsible sections |
@@ -286,7 +286,7 @@ LOG_LEVEL = "DEBUG"  # Instead of "INFO"
 
 ## 🧠 Model Specifications
 
-### LLM: Llama-3.1-8B-Instruct
+### LLM: llama3.1:8b
 - **Parameters**: 8 Billion (fits in CPU)
 - **Architecture**: Transformer-based
 - **Quantization**: Supported (reduces memory)
@@ -313,7 +313,7 @@ All settings in `config.py`:
 
 ```python
 # LLM Parameters
-LLM_MODEL = "llama-3.1-8b-instruct"
+LLM_MODEL = "llama3.1:8b"
 MAX_TOKENS = 512
 TEMPERATURE = 0.7  # 0=deterministic, 1=creative
 
