@@ -64,18 +64,47 @@ class GradioApp:
             
             # Format reasoning
             reasoning_text = f"### Agent Reasoning\n\n{result['reasoning']}"
+
+            # Format agent strategy details
+            strategy_text = "### Agent Strategy\n\n"
+            strategy_text += f"- Retrieval strategy: {result.get('retrieval_strategy', 'unknown')}\n"
+
+            subqueries = result.get("subqueries", []) or []
+            if subqueries:
+                strategy_text += "- Subqueries:\n"
+                for i, subquery in enumerate(subqueries, 1):
+                    strategy_text += f"  {i}. {subquery}\n"
+            else:
+                strategy_text += "- Subqueries: none\n"
+
+            if getattr(self.agent, "session_memory", None):
+                strategy_text += "\n### Session Memory Snapshot\n\n"
+                strategy_text += self.agent.session_memory.build_summary()
+
+            if result.get("agent_trace"):
+                reasoning_text += "\n\n### Agent Action Trace\n"
+                for item in result["agent_trace"]:
+                    reasoning_text += (
+                        f"\n- Step {item['step']}: `{item['action']}`\n"
+                        f"  - Observation: {item['observation']}\n"
+                    )
             
             # Format execution info
             logs_text = f"### Execution Details\n\n"
             logs_text += f"- Query: {result['query']}\n"
             logs_text += f"- Documents Retrieved: {len(result['retrieved_documents'])}\n"
+            logs_text += f"- Iterations: {result.get('iterations', 1)}\n"
+            logs_text += f"- Final Critic Score: {result.get('final_confidence', 0.0):.2f}\n"
+            logs_text += f"- Retrieval Strategy: {result.get('retrieval_strategy', 'unknown')}\n"
+            logs_text += f"- Subqueries Used: {len(subqueries)}\n"
             logs_text += f"- Execution Time: {result['execution_time']:.2f}s\n"
             
             return {
                 "response": result["response"],
                 "retrieval": retrieval_text,
                 "reasoning": reasoning_text,
-                "logs": logs_text
+                "logs": logs_text,
+                "strategy": strategy_text,
             }
             
         except Exception as e:
@@ -84,7 +113,8 @@ class GradioApp:
                 "response": f"An error occurred: {str(e)}",
                 "retrieval": "",
                 "reasoning": "",
-                "logs": f"Error: {str(e)}"
+                "logs": f"Error: {str(e)}",
+                "strategy": ""
             }
     
     def build_ui(self):
@@ -180,6 +210,11 @@ class GradioApp:
                     logs_output = gr.Markdown(
                         value="*Execution details will appear here*"
                     )
+
+                with gr.Accordion("🧭 Agent Strategy & Memory", open=False):
+                    strategy_output = gr.Markdown(
+                        value="*Agent strategy details will appear here*"
+                    )
             
             # Connect button to processing function
             submit_btn.click(
@@ -189,7 +224,8 @@ class GradioApp:
                     "response": response_output,
                     "retrieval": retrieval_output,
                     "reasoning": reasoning_output,
-                    "logs": logs_output
+                    "logs": logs_output,
+                    "strategy": strategy_output,
                 }
             )
             
@@ -201,7 +237,8 @@ class GradioApp:
                     "response": response_output,
                     "retrieval": retrieval_output,
                     "reasoning": reasoning_output,
-                    "logs": logs_output
+                    "logs": logs_output,
+                    "strategy": strategy_output,
                 }
             )
             

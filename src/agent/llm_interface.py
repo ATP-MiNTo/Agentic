@@ -1,6 +1,8 @@
 # LLM interface for Llama via Ollama
 import requests
-from typing import Optional, Generator
+import json
+import re
+from typing import Optional, Generator, Dict, Any
 import config
 from src.utils.logger import get_logger
 
@@ -125,6 +127,54 @@ class LLMInterface:
         except Exception as e:
             logger.error(f"Error generating response: {str(e)}")
             raise
+
+    def _extract_first_json_object(self, text: str) -> Optional[Dict[str, Any]]:
+        """Extract the first JSON object from a text response."""
+        if not text:
+            return None
+
+        fenced_match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", text, re.DOTALL)
+        candidates = []
+        if fenced_match:
+            candidates.append(fenced_match.group(1))
+
+        start = text.find("{")
+        end = text.rfind("}")
+        if start != -1 and end != -1 and end > start:
+            candidates.append(text[start:end + 1])
+
+        for candidate in candidates:
+            try:
+                parsed = json.loads(candidate)
+                if isinstance(parsed, dict):
+                    return parsed
+            except json.JSONDecodeError:
+                continue
+
+        return None
+
+    def generate_json(
+        self,
+        prompt: str,
+        fallback: Optional[Dict[str, Any]] = None,
+        max_tokens: int = 256,
+        temperature: float = 0.2,
+    ) -> Dict[str, Any]:
+        """Generate a JSON object from model output with fallback handling."""
+        try:
+            text = self.generate(
+                prompt,
+                max_tokens=max_tokens,
+                temperature=temperature,
+            )
+            parsed = self._extract_first_json_object(text)
+            if parsed is not None:
+                return parsed
+            logger.warning("Model did not return valid JSON; using fallback")
+        except Exception as e:
+            logger.warning(f"JSON generation failed ({str(e)}); using fallback")
+
+        return fallback.copy() if isinstance(fallback, dict) else {}
     
     def stream_generate(
         self,

@@ -117,6 +117,15 @@ ENABLE_CACHING = True  # Cache LLM responses for identical queries
 ENABLE_METRICS = True  # Track performance metrics
 ENABLE_USER_FEEDBACK = False  # Allow users to rate responses
 
+# Agentic loop behavior
+ENABLE_AGENTIC_LOOP = True
+ENABLE_SESSION_MEMORY = True
+AGENT_MAX_STEPS = 4
+AGENT_MIN_EVIDENCE_DOCS = 2
+AGENT_CONFIDENCE_THRESHOLD = 0.7
+AGENT_FORCE_CLARIFY_ON_LOW_EVIDENCE = True
+AGENT_MAX_SUBQUERIES = 3
+
 # ==================== DEBUGGING ====================
 
 # Verbose output
@@ -168,6 +177,17 @@ def validate_config():
     # Check top_k
     if TOP_K < 1:
         errors.append(f"TOP_K must be at least 1, got {TOP_K}")
+
+    if AGENT_MAX_STEPS < 1:
+        errors.append(f"AGENT_MAX_STEPS must be at least 1, got {AGENT_MAX_STEPS}")
+
+    if AGENT_MAX_SUBQUERIES < 1:
+        errors.append(f"AGENT_MAX_SUBQUERIES must be at least 1, got {AGENT_MAX_SUBQUERIES}")
+
+    if not (0.0 <= AGENT_CONFIDENCE_THRESHOLD <= 1.0):
+        errors.append(
+            f"AGENT_CONFIDENCE_THRESHOLD must be between 0.0 and 1.0, got {AGENT_CONFIDENCE_THRESHOLD}"
+        )
     
     if errors:
         print("⚠️ Configuration validation errors:")
