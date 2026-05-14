@@ -4,7 +4,7 @@
 
 - Python 3.10+
 - Ollama installed and running
-- Local model available in Ollama (default config uses `llama-3.1-8b-instruct`)
+- Local model available in Ollama (default config uses `llama3.1:8b`)
 
 ## Setup
 

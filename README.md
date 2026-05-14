@@ -28,7 +28,7 @@ Unlike basic RAG, this system runs an **iterative planner-tool-critic loop**:
 
 ## Key Features
 
-- Local LLM via Ollama (`llama-3.1-8b-instruct` by default)
+- Local LLM via Ollama (`llama3.1:8b` by default)
 - Semantic retrieval via FAISS + BGE embeddings
 - Iterative plan-act-observe-critic orchestration
 - Medical safety disclaimers and source-cited responses
