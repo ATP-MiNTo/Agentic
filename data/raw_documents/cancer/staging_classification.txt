@@ -1,14 +1,81 @@
 [PLACEHOLDER - ADD CONTENT HERE]
 
 Title: Cancer Staging and Classification
-Source: [Add source]
-Last Updated: [Add date]
+Source:
+- https://www.ncbi.nlm.nih.gov/books/NBK553187/
+- https://my.clevelandclinic.org/health/diagnostics/22607-cancer-stages-grades-system
+- https://www.worldwidecancerresearch.org/cancer-and-research-information/diagnosis-prevention-and-treatment/cancer-stages-and-grades-explained-what-they-mean-and-why-they-matter/
+- https://my.clevelandclinic.org/health/diagnostics/22607-cancer-stages-grades-system
+- https://pmc.ncbi.nlm.nih.gov/articles/PMC5215238/
+- https://www.mdanderson.org/patients-family/diagnosis-treatment/a-new-diagnosis/cancer-grade-vs--cancer-stage.html
+- https://www.worldwidecancerresearch.org/cancer-and-research-information/diagnosis-prevention-and-treatment/cancer-stages-and-grades-explained-what-they-mean-and-why-they-matter/
+- https://www.foxchase.org/blog/cancer-staging-why-its-important-and-why-accuracy-matters
+- https://pmc.ncbi.nlm.nih.gov/articles/PMC5215238/
+
+Last Updated:  January 1, 2026
 
 ---
 
-Add content about:
-- TNM staging system
-- Stage 0, 1, 2, 3, 4 definitions
-- How staging affects treatment
-- Grading vs staging
+TNM staging system
+- The TNM staging system is a standard way to describe how far a cancer has spread. It was developed by the American Joint Committee on Cancer (AJCC) and the Union for International Cancer Control (UICC).
+- What TNM means
+- - T (Tumor) = size and extent of the primary tumor.
+- - N (Nodes) = whether nearby lymph nodes contain cancer.
+- - M (Metastasis) = whether the cancer has spread to distant parts of the body.
+- Details of TNM Classification
+- - Primary Tumor (T)
+- - - TX: Primary tumor cannot be assessed
+- - - T0: No evidence of a primary tumor
+- - - Tis: Carcinoma in situ (early-stage cancer limited to the original cell layer)
+- - - T1–T4: Increasing size or local spread of the tumor
+- - Regional Lymph Nodes (N)
+- - - NX: Nearby lymph nodes cannot be assessed
+- - - N0: No cancer found in nearby lymph nodes
+- - - N1–N3: Increasing spread to nearby lymph nodes
+- - Distant Metastasis (M)
+- - - M0: No distant metastasis detected
+- - - M1: Cancer has spread to distant organs or tissues
+- How it is written
+- - TNM is usually written with numbers and letters, such as T2N1M0. In that example, the tumor is moderately sized, there is some lymph node involvement, and there is no distant metastasis.
+- Example
+- - A cancer classified as T2N1M0 means: The tumor is moderately sized, Cancer has spread to nearby lymph nodes, No distant metastasis has been found
+- Why it matters
+- - Doctors use TNM to help estimate prognosis, choose treatment, and communicate clearly about cancer stage. It is especially used for solid tumors, while some cancers like blood cancers or brain tumors may use different staging systems.
+
+Stage 0, 1, 2, 3, 4 definitions
+- Stage 0
+- - Stage 0 is also called Carcinoma in situ (CIS). Abnormal cells are present, but they have not spread into nearby tissue. It is often called carcinoma in situ, and it may become cancer later if untreated. This stage is highly treatable and often curable.
+- Stage 1
+- - Stage 1 usually means the cancer is small and confined to the original site. It has not spread to nearby lymph nodes or distant organs. There is little or no spread to nearby lymph nodes.
+- Stage 2
+- - Stage 2 means the tumor is larger than stage 1 and may have started to spread into nearby tissue or a small number of nearby lymph nodes, depending on the cancer type.
+- Stage 3
+- - Stage 3 means the cancer is more advanced locally. It has often grown deeper into nearby tissues and may involve more nearby lymph nodes, but it has not yet spread to distant organs. The cancer has spread extensively to nearby tissues and/or multiple lymph nodes, but not to distant parts of the body.
+- Stage 4
+- - Stage 4 means the cancer has spread to distant parts of the body. This is also called metastatic cancer. Stage IV is known as metastatic cancer. The cancer has spread to distant organs such as the lungs, liver, bones, or brain.
+
+How staging affects treatment
+- Early stage
+- - Stage 0 and stage I cancers are often treated with local treatments such as surgery, radiation, or both, because the cancer is still limited to one area.
+- Middle stages
+- - Stage II and stage III cancers often need a combination of treatments, such as surgery plus chemotherapy, radiation, targeted therapy, or immunotherapy, because there is a higher risk of spread or recurrence.
+- Advanced stage
+- - Stage IV cancers have spread to distant organs, so treatment is usually mainly systemic therapy, such as chemotherapy, immunotherapy, or targeted therapy, sometimes with radiation or surgery for symptom control.
+- Why staging matters
+- - Staging also helps doctors estimate prognosis, plan follow-up, and decide whether the goal is cure, long-term control, or symptom relief.
+
+Grading vs staging
+- Staging tells you how much cancer is in the body and where it has spread. Grading tells you how abnormal the cancer cells look under the microscope and gives an idea of how fast they may grow.
+- Staging
+- - Staging is about the extent of cancer: tumor size, nearby lymph nodes, and distant spread. It is often described with the TNM system or with stage numbers 0 to 4.
+- Grading
+- - Grading is about the appearance of the cancer cells. Lower-grade cancers look more like normal cells, while higher-grade cancers look more abnormal and are often more aggressive.
+
 - Importance of accurate staging
+- Accurate staging is important because it helps doctors choose the right treatment, estimate prognosis, and decide whether surgery, radiation, chemotherapy, or a combination is most appropriate.
+- Why accuracy matters
+- - If a cancer is under-staged, treatment may be too weak and miss disease that has already spread. If it is over-staged, a patient may get more intensive treatment than needed, which can increase side effects without improving benefit.
+- Treatment planning
+- - Staging tells the team whether the cancer is still localized or has reached lymph nodes or distant organs. That changes the treatment goal from mainly local control to broader systemic therapy when needed.
+- Prognosis and trials
+- - Accurate staging also helps doctors estimate likely outcomes and identify clinical trials that match the true extent of disease. It is also important for comparing results across patients and treatment centers.

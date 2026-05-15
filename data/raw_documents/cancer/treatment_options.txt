@@ -1,16 +1,121 @@
 [PLACEHOLDER - ADD CONTENT HERE]
 
 Title: Cancer Treatment Options
-Source: [Add source]
-Last Updated: [Add date]
+Source:
+- https://www.cancer.gov/about-cancer/treatment/types/surgery
+- https://www.cancer.org/cancer/managing-cancer/treatment-types/surgery.html
+- https://my.clevelandclinic.org/health/treatments/16859-chemotherapy
+- https://www.cancerresearchuk.org/about-cancer/treatment/chemotherapy/how-chemotherapy-works
+- https://www.cancer.gov/about-cancer/treatment/types/radiation-therapy
+- https://my.clevelandclinic.org/health/treatments/17637-radiation-therapy
+- https://www.cancerresearch.org/immunotherapy-by-cancer-type?campaign=784691
+- https://my.clevelandclinic.org/health/treatments/11582-immunotherapy
+- https://www.bumrungrad.com/en/treatments/targeted-therapy
+- https://www.cancer.org/cancer/managing-cancer/treatment-types/targeted-therapy.html
+- https://pmc.ncbi.nlm.nih.gov/articles/PMC5514969/
+- https://www.msdmanuals.com/home/cancer/prevention-and-treatment-of-cancer/combination-cancer-therapy
+Last Updated: 2026
 
 ---
 
-Add content about:
-- Surgery
-- Chemotherapy
-- Radiation therapy
-- Immunotherapy
-- Targeted therapy
-- Combination treatments
-- Clinical trials
+Surgery
+- Cancer surgery can be used to remove the whole tumor, remove part of a tumor to reduce symptoms or help other treatments work better, or take tissue for diagnosis and staging. It is a local treatment, so it works best for solid tumors in one area rather than cancers that have spread widely.
+- Common roles
+- - Curative surgery: aims to remove all visible cancer.
+- - Debulking surgery: removes as much cancer as possible when full removal is too risky or not possible.
+- - Palliative surgery: helps relieve pain, pressure, bleeding, or blockage.
+- - Diagnostic/staging surgery: helps confirm cancer and see how far it has spread.
+- How it fits with other treatment
+- - Surgery is often combined with chemotherapy, radiation, immunotherapy, or targeted therapy. These treatments may be given before surgery to shrink the tumor, or after surgery to destroy any remaining cancer cells.
+- When it may not be used alone
+- - Surgery is usually not enough by itself for cancers that have already spread to distant organs, and it is generally not used to treat leukemia in the same way as solid tumors.
+
+Chemotherapy
+- Chemotherapy is a cancer treatment that uses drugs to kill cancer cells or stop them from growing and dividing.
+- How it works
+- - Chemotherapy targets rapidly dividing cells, which is why it can shrink tumors and slow cancer spread. It may damage the cell’s DNA or interfere with cell division so the cancer cell cannot keep multiplying.
+- How it is used
+- - It can be given before surgery to shrink a tumor, after surgery to destroy remaining cancer cells, together with radiation or surgery, or to control cancer that has spread.
+- Common side effects
+- - Because chemotherapy also affects some healthy fast-growing cells, common side effects include nausea, vomiting, fatigue, mouth sores, hair loss, low blood counts, infection risk, constipation or diarrhea, and nerve tingling.
+- Simple example
+- - If a tumor is too large for surgery at first, chemotherapy may be used first to make it smaller, then surgery may follow.
+
+Radiation therapy
+- Radiation therapy is a cancer treatment that uses high-energy radiation, usually X-rays, to kill cancer cells or stop them from growing.
+- How it works
+- - Radiation damages the DNA of cancer cells, so they can no longer divide normally and eventually die. It does not kill cells instantly; the damage builds up over days or weeks of treatment.
+- How it is used
+- - It may be used as the main treatment, before surgery to shrink a tumor, after surgery to kill leftover cancer cells, together with chemotherapy, or to relieve symptoms such as pain or trouble breathing.
+- Main types
+- - External beam radiation therapy: radiation is delivered from a machine outside the body.
+- - Internal radiation therapy (brachytherapy): radioactive material is placed inside or near the tumor.
+- Common side effects
+- - Side effects depend on the treatment area, but can include skin irritation, tiredness, appetite loss, nausea, and local tissue inflammation.
+- Simple example
+- - If a tumor is in one area and surgery is difficult, radiation may be used to target that spot precisely and reduce the tumor size.
+
+Immunotherapy
+- Immunotherapy is a cancer treatment that helps the body’s immune system recognize and attack cancer cells.
+- How it works
+- - Cancer cells can hide from immune defenses or switch off immune responses. Immunotherapy helps by boosting immune activity, removing the “brakes” on immune cells, or giving the immune system specially designed agents to attack cancer more effectively.
+- Main types
+- - Checkpoint inhibitors: block proteins that stop immune cells from attacking cancer.
+- - CAR-T or T-cell therapy: modifies immune cells so they can better target cancer.
+- - Monoclonal antibodies: lab-made antibodies that mark cancer cells or block growth signals.
+- - Cancer vaccines and other immune boosters: help the immune system respond more strongly.
+- When it is used
+- - Immunotherapy is often used for cancers that have spread, come back, or do not respond well to other treatments. It can also be combined with surgery, chemotherapy, or radiation in some cases.
+- Side effects
+- - Because it stimulates the immune system, side effects can include fatigue, skin changes, flu-like symptoms, or inflammation in organs such as the lungs, liver, intestines, or thyroid.
+- Simple idea
+- - Chemotherapy attacks cancer cells directly, while immunotherapy helps your immune system do the attacking.
+
+Targeted therapy
+- Targeted therapy is a cancer treatment that uses drugs to attack specific molecules, genes, or proteins that help cancer cells grow and spread.
+- How it works
+- - Unlike chemotherapy, which can affect many fast-growing cells, targeted therapy is designed to hit a more specific cancer feature, so it often causes less damage to normal cells. It may block growth signals, stop tumor cells from dividing, or cut off signals that help the tumor form new blood vessels.
+- When it is used
+- - Targeted therapy is often used when the cancer has a known biomarker or mutation that the drug can attack. It can be used alone or combined with surgery, chemotherapy, radiation, or immunotherapy depending on the cancer type and stage.
+- Common types
+- - Monoclonal antibodies: bind to targets on the outside of cancer cells.
+- - Small-molecule drugs: enter the cell and block internal signaling pathways.
+- Main benefit
+- - Because it is more precise, targeted therapy may be more effective for cancers with the right genetic target and can sometimes have fewer side effects than standard chemotherapy.- Common side effects include
+- - Skin problems
+- - Diarrhea
+- - High blood pressure- Important limitation
+- - Not every cancer has a targetable mutation, and some cancers can develop resistance over time, so doctors usually choose it after testing the tumor’s biomarkers.
+
+Combination treatments
+- Combination treatments use two or more cancer therapies together, such as surgery, chemotherapy, radiation, immunotherapy, or targeted therapy, to improve the chance of controlling or curing the cancer.
+- Why combinations are used
+- - Different treatments attack cancer in different ways, so combining them can improve effectiveness, reduce resistance, and treat both local and spread disease. For example, surgery or radiation can remove or destroy cancer in one area, while drugs can treat cancer cells that may have spread elsewhere.
+- Common patterns
+- - Neoadjuvant therapy: treatment given before surgery to shrink a tumor.
+- - Adjuvant therapy: treatment given after surgery to kill any remaining cancer cells.
+- - Concurrent therapy: treatments given at the same time, such as chemotherapy with radiation.
+- Examples
+- - A common combination is surgery plus chemotherapy, or radiation plus chemotherapy for certain cancers. Some cancers may also use targeted therapy with immunotherapy or chemotherapy when studies show better outcomes.
+- Main tradeoff
+- - Combination treatment can be more effective, but it may also cause more side effects, so doctors choose the mix based on cancer type, stage, biomarkers, and the patient’s overall health.
+- Simple idea
+- - Combination therapy is like using multiple tools at once: one treatment may shrink the tumor, another may kill leftover cells, and another may reduce the chance of the cancer returning.
+
+Clinical trials
+- Clinical trials are research studies in people that test new ways to prevent, detect, diagnose, or treat cancer.
+- Why they matter
+- - Clinical trials help determine whether a new treatment is safe and effective, and they are a major way cancer care improves over time. They can also test new combinations of existing treatments and better ways to manage side effects.
+- Main types
+- - Treatment trials: test new drugs, procedures, or treatment combinations.
+- - Prevention trials: look for ways to reduce cancer risk.
+- - Screening/diagnostic trials: improve early detection and diagnosis.
+- - Supportive care trials: improve comfort, side effect control, and quality of life.
+- Trial phases
+- - Phase 1: focuses on safety and dose in a small group.
+- - Phase 2: looks at whether it works and continues safety monitoring.
+- - Phase 3: compares the new treatment with standard care in a larger group.
+- Important point
+- - Clinical trials are not only for people with no other options; many studies test new combinations or earlier use of treatments that may benefit people at different stages.
+- Simple idea
+- - A clinical trial is a carefully monitored study that helps answer, “Does this new cancer approach work better, work safer, or improve quality of life?”.

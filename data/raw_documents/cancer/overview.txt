@@ -1,15 +1,69 @@
 [PLACEHOLDER - ADD CONTENT HERE]
 
 Title: Cancer Overview
-Source: [Add source]
-Last Updated: [Add date]
+Source:
+- https://cancerprogressreport.aacr.org/progress/cpr25-contents/cpr25-understanding-the-path-to-cancer-development/
+- https://www.sciencedaily.com/releases/2026/01/260125083344.htm
+- https://pmc.ncbi.nlm.nih.gov/articles/PMC10618731/
+- https://edition.cnn.com/
+- https://www.reuters.com/
+- https://www.bbc.com/
+- https://www.who.int/
+- https://www.bloomberg.com/latest
+- https://www.euronews.com/
+Last Updated: 2024–2026
 
 ---
 
-Add content about:
-- Definition of cancer
-- How cancer develops
-- Common types of cancer
-- Cancer statistics
-- Risk factors
-- Prevention strategies
+Definition of cancer
+- Cancer is a group of diseases in which abnormal cells grow uncontrollably, invade nearby tissues, and can spread to other parts of the body through the blood or lymph system.
+- Normally, cells follow genetic instructions that tell them when to grow, divide, and die. When DNA changes or mutations happen, those instructions can become faulty, and the cell may begin dividing too much instead of stopping when it should.
+- The spread of cancer cells to other organs is called metastasis, which is one of the main causes of cancer-related deaths.
+
+How cancer develops
+- Cancer develops through a multi-stage process that begins with changes in a cell's DNA. These genetic mutations may occur because of:
+- - Errors during cell division
+- - Exposure to harmful substances such as tobacco smoke or radiation
+- - Inherited genetic mutations from parents
+- - Viral or bacterial infections
+- - Environmental and lifestyle factors
+- As abnormal cells continue to divide, they can form tumors and eventually spread through the bloodstream or lymphatic system to other parts of the body.
+
+Common types of cancer
+- There are more than 100 types of cancer. Some of the most common types include:
+- 1. Carcinoma - Cancer that begins in epithelial cells, such as lung cancer, breast cancer, and colorectal cancer.
+- 2. Sarcoma - Cancer that develops in bones, muscles, fat, or connective tissues.
+- 3. Leukemia - Cancer of the blood-forming tissues, especially the bone marrow and blood cells.
+- 4. Lymphoma - Cancer that affects the lymphatic system and immune cells.
+- 5. Melanoma - A type of skin cancer that develops in pigment-producing cells called melanocytes.
+- Common cancers are the cancers diagnosed most often in a population. A widely used list includes breast, prostate, lung, colon and rectal, melanoma, bladder, kidney, endometrial, leukemia, pancreatic, thyroid, liver, and non-Hodgkin lymphoma.
+
+Cancer statistics
+- In 2022, there were about 20 million new cancer cases and 9.7 million cancer deaths worldwide. By 2050, new cases are projected to rise to about 35 million if population growth continues.
+- Lung cancer was the most commonly diagnosed cancer in 2022, with about 2.5 million new cases, followed by breast, colorectal, prostate, and stomach cancers. Lung cancer was also the leading cause of cancer death worldwide.
+- Cancer is one of the leading causes of death worldwide. According to the World Health Organization (WHO), nearly 10 million people died from cancer in 2022.
+- Most common cancers in 2022: Lung cancer, Breast cancer, Colorectal cancer, Prostate cancer, Skin cancer (non-melanoma), Stomach cancer.
+- Leading causes of cancer death: Lung cancer, Colorectal cancer, Liver cancer, Breast cancer, Stomach cancer.
+- Approximately 400,000 children develop cancer each year worldwide.
+
+Main risk factors
+- Cancer risk factors are things that increase the chance of developing cancer, but they do not mean a person will definitely get cancer.
+- - Age. Risk rises as people get older.
+- - Tobacco use. Smoking and other tobacco products strongly increase cancer risk.
+- - Alcohol use. Regular heavy drinking raises the risk of several cancers.
+- - Family history and inherited genes. Some cancers run in families because of inherited gene changes.
+- - Obesity and inactivity. Excess body weight and low physical activity increase the risk of several cancers.
+- - UV exposure. Sunlight and tanning beds increase skin cancer risk.
+- - Infections. HPV and some other infections can increase cancer risk.
+- - Environmental exposures. Radon, asbestos, secondhand smoke, and certain chemicals can raise risk.
+
+Prevention strategies
+- Cancer prevention strategies focus on lowering exposure to known risk factors and catching some cancers early, when treatment works best.
+- - Do not use tobacco. Avoid smoking and secondhand smoke.
+- - Maintain a healthy weight. Excess body weight raises the risk of several cancers.
+- - Be physically active. Regular movement and less sitting help reduce risk.
+- - Eat a healthy diet. Emphasize fruits, vegetables, whole grains, and beans; limit fast foods, red meat, processed meat, and sugary drinks.
+- - Limit alcohol. Less alcohol means lower cancer risk.
+- - Protect yourself from the sun. Use shade, clothing, and sunscreen to reduce skin cancer risk.
+- - Get vaccinated. HPV and hepatitis B vaccines can prevent cancers linked to these infections.
+- - Use screening tests. Tests like mammograms, Pap tests, colonoscopy, and low-dose CT can find some cancers early.
