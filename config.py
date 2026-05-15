@@ -1,7 +1,6 @@
 # Configuration file for Medical RAG PoC
 # Edit this file to customize behavior without changing code
 
-import os
 from pathlib import Path
 
 # ==================== PATHS ====================
@@ -76,6 +75,13 @@ GRADIO_DEBUG = False  # Debug mode
 GRADIO_THEME = "soft"  # Options: soft, base, monochrome, glass
 
 # ==================== MEDICAL DATA SETTINGS ====================
+
+# Default disease corpus used by the UI and quick tests.
+# Change this to one of: cancer, diabetes, migraine, all
+DEFAULT_DISEASE = "cancer"
+
+# Available disease corpora shown in the UI selector.
+DISEASE_OPTIONS = ["cancer", "diabetes", "migraine", "all"]
 
 # Disclaimer for medical information
 MEDICAL_DISCLAIMER = """

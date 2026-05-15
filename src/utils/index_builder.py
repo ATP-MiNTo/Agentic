@@ -15,12 +15,13 @@ logger = get_logger()
 class FAISSIndexBuilder:
     """Build and manage FAISS index for semantic search."""
     
-    def __init__(self):
+    def __init__(self, data_dir: Path = None):
         """Initialize index builder."""
         self.loader = DataLoader()
         self.embedding_model = EmbeddingModel()
         self.index = None
         self.metadata = {}
+        self.data_dir = Path(data_dir) if data_dir is not None else config.DATA_DIR
     
     def build_index(self) -> bool:
         """Build FAISS index from raw documents.
@@ -35,7 +36,7 @@ class FAISSIndexBuilder:
             import faiss
             
             # Step 1: Load documents
-            documents = self.loader.load_documents()
+            documents = self.loader.load_documents(self.data_dir)
             if not documents:
                 logger.error("No documents found")
                 return False
@@ -146,7 +147,7 @@ class FAISSIndexBuilder:
             import faiss
             index = faiss.read_index(str(index_path))
             
-            with open(metadata_path, 'r') as f:
+            with open(metadata_path, 'r', encoding='utf-8') as f:
                 metadata = json.load(f)
             
             if index.ntotal != len(metadata):

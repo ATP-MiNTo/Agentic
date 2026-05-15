@@ -54,7 +54,7 @@ class MedicalRAGAgent:
             logger.debug(f"Loading FAISS index from {index_path}")
             self.faiss_index = faiss.read_index(str(index_path))
             
-            with open(metadata_path, 'r') as f:
+            with open(metadata_path, 'r', encoding='utf-8') as f:
                 self.metadata = json.load(f)
             
             logger.info(f"✓ FAISS index loaded ({len(self.metadata)} documents)")

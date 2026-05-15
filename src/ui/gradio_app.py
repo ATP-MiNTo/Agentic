@@ -3,6 +3,7 @@ import gradio as gr
 from typing import Dict
 import config
 from src.agent.rag_agent import MedicalRAGAgent
+from src.utils.index_builder import FAISSIndexBuilder
 from src.utils.logger import get_logger
 
 logger = get_logger()
@@ -11,15 +12,34 @@ logger = get_logger()
 class GradioApp:
     """Gradio interface for Medical RAG Agent."""
     
-    def __init__(self):
+    def __init__(self, default_disease: str = None):
         """Initialize Gradio app."""
         logger.info("Initializing Gradio interface...")
+        self.agent = None
+        self.current_disease = None
         try:
-            self.agent = MedicalRAGAgent()
+            self.load_disease_corpus(default_disease or config.DEFAULT_DISEASE)
             logger.info("✓ Agent loaded successfully")
         except Exception as e:
             logger.error(f"Failed to initialize agent: {str(e)}")
             raise
+
+    def load_disease_corpus(self, disease: str) -> str:
+        """Build and load the FAISS index for a selected disease corpus."""
+        disease = (disease or "").strip().lower()
+        if disease not in config.DISEASE_OPTIONS:
+            raise ValueError(f"Unsupported disease '{disease}'")
+
+        disease_dir = config.DATA_DIR if disease == "all" else config.DATA_DIR / disease
+        logger.info(f"Loading disease corpus: {disease_dir}")
+
+        builder = FAISSIndexBuilder(data_dir=disease_dir)
+        if not builder.build_index():
+            raise RuntimeError(f"Failed to build index for {disease}")
+
+        self.agent = MedicalRAGAgent()
+        self.current_disease = disease
+        return f"Loaded corpus: **{disease}**"
     
     def process_query(self, query: str, top_k: int) -> Dict:
         """Process query and return formatted results.
@@ -37,6 +57,14 @@ class GradioApp:
                 "retrieval": "",
                 "reasoning": "",
                 "logs": ""
+            }
+
+        if self.agent is None:
+            return {
+                "response": "No disease corpus is loaded. Please load one first.",
+                "retrieval": "",
+                "reasoning": "",
+                "logs": "No active agent"
             }
         
         logger.info(f"Processing query from web UI: {query[:50]}...")
@@ -129,6 +157,19 @@ class GradioApp:
             **⚠️ DISCLAIMER**: This is for educational purposes only. Always consult healthcare professionals 
             for medical decisions.
             """)
+
+            with gr.Row():
+                disease_selector = gr.Dropdown(
+                    choices=config.DISEASE_OPTIONS,
+                    value=self.current_disease or config.DEFAULT_DISEASE,
+                    label="Disease Corpus",
+                    info="Load and query one disease at a time, or select all"
+                )
+                load_button = gr.Button("Load Selected Corpus", variant="secondary")
+
+            corpus_status = gr.Markdown(
+                value=f"Loaded corpus: **{self.current_disease or 'none'}**"
+            )
             
             # Input section
             with gr.Row():
@@ -137,7 +178,7 @@ class GradioApp:
                         label="Ask a Medical Question",
                         placeholder="Example: What are the symptoms of diabetes?",
                         lines=2,
-                        info="Ask about migraine, diabetes, or cancer"
+                        info="Ask about migraine, diabetes, cancer, or all"
                     )
                 
                 with gr.Column(scale=1):
@@ -204,6 +245,12 @@ class GradioApp:
                     "logs": logs_output
                 }
             )
+
+            load_button.click(
+                fn=self.load_disease_corpus,
+                inputs=[disease_selector],
+                outputs=[corpus_status]
+            )
             
             # Example queries
             gr.Examples(
@@ -226,7 +273,7 @@ def main():
     try:
         logger.info("Starting Gradio web interface...")
         
-        app = GradioApp()
+        app = GradioApp(default_disease=config.DEFAULT_DISEASE)
         ui = app.build_ui()
         
         logger.info(f"Launching at http://{config.GRADIO_SERVER_NAME}:{config.GRADIO_SERVER_PORT}")
