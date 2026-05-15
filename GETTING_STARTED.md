@@ -1,235 +1,147 @@
 # Getting Started - Medical RAG PoC
 
-## Quick Setup Guide
+## Quick setup
 
-### Prerequisites
+### 1. Prerequisites
+
 - Python 3.10+
-- 8GB RAM minimum
-- Ollama (for running Llama model)
-- ~2GB disk space
+- Python 3.11 is recommended on Windows
+- Ollama installed locally
+- About 2 GB of free disk space for models and index files
 
-### Step 1: Install Ollama
+### 2. Install Ollama
 
-Download and install from: https://ollama.ai
+Download and install Ollama from https://ollama.ai.
 
-After installation, pull the Llama model:
+Pull the model used by default in this project:
+
 ```bash
-ollama pull llama2:7b-instruct
-# or
-ollama pull mistral:7b-instruct
+ollama pull llama3.1
 ```
 
-Start Ollama (it runs as a service):
+Start the Ollama service:
+
 ```bash
 ollama serve
 ```
 
-The service will be available at `http://localhost:11434`
+The API should be available at `http://localhost:11434`.
 
-### Step 2: Set Up Python Environment
+### 3. Create a Python environment
 
-#### Option A: Using venv (Recommended)
+Windows:
+
 ```bash
-cd medical_rag_poc
-
-# Create virtual environment
 python -m venv venv
-
-# Activate virtual environment
-# On Windows:
 venv\Scripts\activate
-# On macOS/Linux:
+```
+
+macOS or Linux:
+
+```bash
+python -m venv venv
 source venv/bin/activate
 ```
 
-#### Option B: Using conda
-```bash
-conda create -n medical-rag python=3.10
-conda activate medical-rag
-cd medical_rag_poc
-```
-
-### Step 3: Install Dependencies
+### 4. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-This will install:
-- PyTorch (ML framework)
-- Transformers (HuggingFace models)
-- Sentence Transformers (embeddings)
-- FAISS (vector search)
-- Gradio (web UI)
-- And other utilities
+If Gradio fails to install cleanly on Windows, use Python 3.11 and reinstall the requirements in a fresh virtual environment.
 
-**First time**: This may take 3-5 minutes depending on internet speed.
+### 5. Add medical documents
 
-### Step 4: Add Medical Documents
+Place plain-text or Markdown files under `data/raw_documents/`.
 
-Add your medical documents to:
-```
-data/raw_documents/
-├── migraine/
-│   ├── overview.txt
-│   ├── symptoms.txt
-│   ├── treatment.txt
-│   └── when_to_see_doctor.txt
-├── diabetes/
-│   └── [your content here]
-└── cancer/
-    └── [your content here]
-```
+Examples:
 
-Each `.txt` file should contain medical information in plain text format.
+- `data/raw_documents/migraine/overview.txt`
+- `data/raw_documents/diabetes/management.txt`
+- `data/raw_documents/cancer/treatment_options.txt`
 
-### Step 5: Build FAISS Index
+The CLI indexes everything under `data/raw_documents/`.
+The web UI lets you load a single corpus folder or all documents.
+
+### 6. Build or validate the FAISS index
+
+Build the default index:
 
 ```bash
-python src/utils/index_builder.py
+python -m src.utils.index_builder
 ```
+
+Force a rebuild:
 
 ```bash
-.venv\Scripts\python.exe -m src.utils.index_builder
+python -m src.utils.index_builder --rebuild
 ```
 
-This will:
-1. Load all documents from `data/raw_documents/`
-2. Split them into chunks
-3. Embed chunks using `bge-small-en-v1.5`
-4. Create FAISS index
-5. Save to `data/faiss_index/`
+Validate the saved index:
 
-**Takes 30-60 seconds on first run** (downloads models)
+```bash
+python -m src.utils.index_builder --validate
+```
 
-### Step 6: Run the Agent
+The CLI also supports rebuilding:
 
-#### Option A: Web Interface (Recommended for Demo)
+```bash
+python main.py --rebuild-index
+```
+
+### 7. Run the app
+
+Web UI:
+
 ```bash
 python app.py
 ```
 
-Then open: http://localhost:7860
+CLI query:
 
-#### Option B: Command Line
 ```bash
-# Single query
 python main.py --query "What are diabetes symptoms?"
+```
 
-# Interactive mode
+Interactive CLI:
+
+```bash
 python main.py --interactive
 ```
+
+## Current behavior
+
+- `main.py` runs against the full corpus in `data/raw_documents/`.
+- `app.py` opens the Gradio UI defined in `src/ui/gradio_app.py`.
+- The Gradio UI loads a corpus based on the dropdown and rebuilds the FAISS index for that corpus.
+- The default disease corpus is `cancer`.
 
 ## Troubleshooting
 
-### ❌ "Cannot connect to Ollama"
-- Make sure Ollama is running: `ollama serve`
-- Check endpoint: `http://localhost:11434/api/tags`
+### Cannot connect to Ollama
 
-### ❌ "FAISS index not found"
-- Run: `python src/utils/index_builder.py`
+- Make sure `ollama serve` is running.
+- Confirm `http://localhost:11434/api/tags` responds.
 
-### ❌ "No documents found"
-- Check `data/raw_documents/` directory
-- Add `.txt` files to appropriate disease folders
+### FAISS index missing
 
-### ❌ "Out of memory"
-- Reduce `BATCH_SIZE` in `config.py`
-- Use smaller model (e.g., `mistral:7b` instead of larger models)
+- Run `python -m src.utils.index_builder --rebuild`.
 
-### ❌ Slow embedding
-- First run downloads models (~1GB)
-- Subsequent runs are faster
-- For faster embedding, use GPU (see advanced setup)
+### No documents found
 
-## Configuration
+- Check `data/raw_documents/`.
+- Make sure the files end in `.txt` or `.md`.
 
-Edit `config.py` to customize:
+### Gradio import errors on Windows
 
-```python
-# Model
-LLM_MODEL = "llama3.1:8b"  # or "mistral:7b-instruct"
-EMBEDDING_MODEL = "BAAI/bge-small-en-v1.5"
+- Use Python 3.11.
+- Recreate the virtual environment and reinstall dependencies.
 
-# Retrieval
-TOP_K = 5  # Number of documents to retrieve
-CHUNK_SIZE = 300  # Words per chunk
+## Next step
 
-# LLM
-MAX_TOKENS = 512  # Max response length
-TEMPERATURE = 0.7  # 0=deterministic, 1=creative
+Run the web UI:
 
-# Logging
-LOG_LEVEL = "INFO"  # DEBUG, INFO, WARNING, ERROR
-```
-
-## Project Structure
-
-```
-medical_rag_poc/
-├── data/                    # Medical documents and FAISS index
-├── src/
-│   ├── agent/              # RAG agent implementation
-│   ├── ui/                 # Gradio web interface
-│   └── utils/              # Utilities (logging, data loading)
-├── logs/                   # Execution logs
-├── config.py               # Settings
-├── main.py                 # CLI entry point
-├── app.py                  # Web UI entry point
-├── README.md               # Full documentation
-└── STRUCTURE.md            # Detailed architecture
-```
-
-## Common Commands
-
-```bash
-# Build index
-python src/utils/index_builder.py --rebuild
-
-# Single query via CLI
-python main.py --query "What causes migraines?"
-
-# Interactive chat
-python main.py --interactive
-
-# Web UI
-python app.py
-
-# Validate index
-python src/utils/index_builder.py --validate
-
-# View logs
-cat logs/agent_*.log
-```
-
-## Next Steps
-
-1. ✅ Install Ollama and pull a model
-2. ✅ Run `pip install -r requirements.txt`
-3. ✅ Add medical documents to `data/raw_documents/`
-4. ✅ Run `python src/utils/index_builder.py`
-5. ✅ Launch web UI: `python app.py`
-6. ✅ Ask medical questions!
-
-## Performance Tips
-
-- **Faster**: Use smaller model (8B instead of 13B+)
-- **Faster**: Use fewer documents (start with 5-10)
-- **Faster**: Reduce `TOP_K` from 5 to 3
-- **Better**: Add more detailed documents
-- **Better**: Use GPU (install `torch-cuda` and `faiss-gpu`)
-
-## For More Details
-
-- [README.md](README.md) - Project overview and features
-- [STRUCTURE.md](STRUCTURE.md) - Detailed architecture documentation
-- [config.py](config.py) - All configurable settings
-
----
-
-**Ready? Start with:**
 ```bash
 python app.py
 ```
-
-Happy exploring! 🚀
