@@ -1,5 +1,3 @@
-[PLACEHOLDER - ADD CONTENT HERE]
-
 Title: Cancer Symptoms
 Source:
 - https://www.cancer.org/cancer/diagnosis-staging/signs-and-symptoms-of-cancer.html
@@ -13,128 +11,53 @@ Last Updated: 2026
 
 ---
 
-General cancer warning signs
-- General cancer warning signs include unexplained weight loss, persistent fatigue, a new lump or thickening, unusual bleeding or discharge, a sore that does not heal, changes in bowel or bladder habits, persistent cough or hoarseness, and ongoing pain without a clear cause.
-- Common warning signs
-- - Unexplained weight loss or weight change.
-- - Fatigue that does not improve with rest.
-- - New lump or swelling anywhere in the body.
-- - Unusual bleeding or discharge.
-- - A sore that does not heal.
-- - Changes in bowel or bladder habits.
-- - Persistent cough, hoarseness, or trouble swallowing.
-- - Skin changes, including a changing mole or a new skin lesion.
-- Important note
-- - These symptoms do not always mean cancer, because many non-cancer conditions can cause the same problems. The key concern is when a symptom is new, lasts a long time, or keeps getting worse.
+General warning signs
+- Unexplained weight loss or weight change can be a warning sign.
+- Fatigue that does not improve with rest can be concerning.
+- A new lump or swelling should be checked.
+- Unusual bleeding or discharge can be a warning sign.
+- A sore that does not heal needs evaluation.
+- Changes in bowel or bladder habits can matter.
+- Persistent cough, hoarseness, or trouble swallowing should not be ignored.
+- Skin changes, including a changing mole or new skin lesion, can be important.
+- These symptoms do not always mean cancer.
+- The key concern is whether the symptom is new, persistent, or getting worse.
 
 Common symptoms by cancer type
-- Lung Cancer
-- - Persistent cough
-- - Chest pain
-- - Shortness of breath
-- - Coughing up blood
-- - Frequent lung infections
-- - Hoarseness
-- - Repeated chest infections
-- Breast Cancer
-- - Lump in the breast or underarm
-- - Changes in breast shape or size
-- - Nipple discharge
-- - Skin dimpling or redness
-- - Breast shape or size changes
-- Colorectal Cancer
-- - Blood in stool
-- - Persistent diarrhea or constipation
-- - Abdominal pain or bloating
-- - Unexplained weight loss
-- - Changes in bowel habits
-- Prostate Cancer
-- - Difficulty urinating
-- - Frequent urination, especially at night
-- - Blood in urine or semen
-- - Pelvic discomfort
-- - Weak urine stream
-- - Trouble starting urination
-- - Pain when urinating
-- Skin Cancer
-- - New or changing moles
-- - Irregular borders or uneven color on skin lesions
-- - Sores that do not heal
-- - Unusual skin color changes
-- Cervical or Endometrial Cancer
-- - Abnormal vaginal bleeding
-- - Pelvic pain
-- - Pain during intercourse
-- - Unusual vaginal discharge
-- - Bleeding after menopause
-- Ovarian Cancer
-- - Bloating
-- - Pelvic or abdominal pain
-- - Feeling full quickly
-- - Appetite changes
-- - Urinary changes
-- Pancreatic Cancer
-- - Upper abdominal pain that may spread to the back
-- - Unexplained weight loss
-- - Poor appetite
-- - New diabetes
-- - Jaundice
-- Liver Cancer
-- - Yellowing of skin and eyes (jaundice)
-- - Abdominal swelling or pain
-- - Loss of appetite
-- - Fatigue
-- - Weakness
-- Stomach Cancer
-- - Persistent indigestion
-- - Loss of appetite
-- - Stomach pain
-- - Nausea or vomiting
-- - Feeling full quickly after eating
-- Lymphoma or Leukemia
-- - Swollen lymph nodes
-- - Fever
-- - Night sweats
-- - Fatigue
-- - Frequent infections
-- - Easy bruising
-- - Unexplained weight loss
-- Important note
-- - These symptoms are not specific to cancer, and many non-cancer conditions can cause the same problems. What matters most is whether the symptom is new, persistent, or getting worse.
+- Lung cancer may cause persistent cough, chest pain, shortness of breath, coughing up blood, frequent lung infections, or hoarseness.
+- Breast cancer may cause a lump in the breast or underarm, changes in breast shape or size, nipple discharge, or skin dimpling and redness.
+- Colorectal cancer may cause blood in stool, persistent diarrhea or constipation, abdominal pain or bloating, unexplained weight loss, or changes in bowel habits.
+- Prostate cancer may cause difficulty urinating, frequent urination, blood in urine or semen, pelvic discomfort, a weak urine stream, trouble starting urination, or pain when urinating.
+- Skin cancer may cause new or changing moles, irregular borders, uneven color, sores that do not heal, or unusual skin color changes.
+- Cervical or endometrial cancer may cause abnormal vaginal bleeding, pelvic pain, pain during intercourse, unusual vaginal discharge, or bleeding after menopause.
+- Ovarian cancer may cause bloating, pelvic or abdominal pain, feeling full quickly, appetite changes, or urinary changes.
+- Pancreatic cancer may cause upper abdominal pain, unexplained weight loss, poor appetite, new diabetes, or jaundice.
+- Liver cancer may cause jaundice, abdominal swelling or pain, loss of appetite, fatigue, or weakness.
+- Stomach cancer may cause persistent indigestion, loss of appetite, stomach pain, nausea or vomiting, or feeling full quickly after eating.
+- Lymphoma or leukemia may cause swollen lymph nodes, fever, night sweats, fatigue, frequent infections, easy bruising, or unexplained weight loss.
 
 Early detection importance
-- Early detection matters because cancer found sooner is usually smaller, less spread out, and easier to treat successfully.
-- Why it helps
-- - Treatment is often more effective when the cancer is still at an early stage.
-- - Early treatment can offer more options, including local treatment like surgery in some cases.
-- - It can reduce treatment intensity, side effects, and long-term complications.
-- - It can improve survival and quality of life.
-- Screening vs symptoms
-- - Early detection can happen through screening before symptoms appear, or by noticing warning signs and getting checked early. This is important because some cancers do not cause obvious symptoms until they are more advanced.
-- Simple example
-- - A breast cancer found at stage 1 is often much easier to treat than one found after it has spread, which is why early screening and prompt evaluation of new symptoms can make a major difference.
+- Early detection matters because cancer found sooner is usually smaller and easier to treat.
+- Treatment is often more effective when cancer is still at an early stage.
+- Early treatment can offer more options, including local treatment such as surgery.
+- Early detection can reduce treatment intensity, side effects, and long-term complications.
+- Early detection can improve survival and quality of life.
+- Screening can find some cancers before symptoms appear.
+- New symptoms should also be checked early because some cancers do not cause obvious symptoms until they are advanced.
 
 When to seek medical attention
-- Symptoms worth checking
-- - A new lump or swelling.
-- - Unexplained weight loss.
-- - Persistent cough, hoarseness, or trouble swallowing.
-- - Unusual bleeding or discharge.
-- - A sore that does not heal.
-- - Changes in bowel or bladder habits.
-- - Ongoing pain without a clear cause.
-- - Fever, night sweats, or major fatigue that does not improve.
-- - Symptoms that persist for several weeks.
-- - Symptoms that become more severe over time.
-- - Symptoms that interfere with daily life.
-- - Unexplained bleeding, severe pain, or rapid weight loss.
-- Get checked sooner if the symptom is affecting daily life, keeps coming back, or is clearly worsening over time.
-- People with higher cancer risk should pay particular attention to screening and medical checkups. Risk factors include: Smoking or tobacco use, Heavy alcohol consumption, Family history of cancer, Obesity and physical inactivity, Chronic infections such as HPV or hepatitis B/C, Excessive sun exposure, Exposure to carcinogenic chemicals or radiation.
+- Seek medical attention for a new lump or swelling.
+- Seek medical attention for unexplained weight loss.
+- Seek medical attention for persistent cough, hoarseness, or trouble swallowing.
+- Seek medical attention for unusual bleeding or discharge.
+- Seek medical attention for a sore that does not heal.
+- Seek medical attention for changes in bowel or bladder habits.
+- Seek medical attention for ongoing pain without a clear cause.
+- Seek medical attention for fever, night sweats, or major fatigue that does not improve.
+- Seek medical attention sooner if a symptom is affecting daily life, returning repeatedly, or clearly worsening.
+- People with higher cancer risk should pay particular attention to screening and checkups.
 
 Symptom variations by stage
-- Early stages
-- - Stage 0 to stage I cancers may cause no symptoms at all, or only subtle local signs such as a small lump, a skin change, abnormal bleeding, or a mild change in bowel or bladder habits. Because the disease is still limited, symptoms are often easier to miss or confuse with non-cancer problems.
-- Middle stages
-- - Stage II and stage III cancers are more likely to cause symptoms from the growing tumor or nearby spread, such as pain, swelling, coughing, hoarseness, trouble swallowing, or enlarged lymph nodes. At these stages, symptoms tend to be more noticeable because the cancer is affecting surrounding tissue or regional nodes.
-- Advanced stage
-- - Stage IV cancer is more likely to cause systemic symptoms like fatigue, weight loss, poor appetite, and persistent pain, plus symptoms from distant spread such as shortness of breath, jaundice, bone pain, headaches, or seizures depending on where it has spread. In one large study, the proportion of patients diagnosed with stage IV disease varied by symptom, ranging from 1% for abnormal mole to 80% for neck lump.
+- Early stage cancers may cause no symptoms or only subtle local signs.
+- Middle stage cancers are more likely to cause pain, swelling, cough, hoarseness, trouble swallowing, or enlarged lymph nodes.
+- Advanced stage cancers are more likely to cause fatigue, weight loss, poor appetite, persistent pain, and symptoms from distant spread such as shortness of breath, jaundice, bone pain, headaches, or seizures.
