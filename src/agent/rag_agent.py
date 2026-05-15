@@ -233,13 +233,20 @@ class MedicalRAGAgent:
             logger.error(f"Error generating response: {str(e)}")
             return f"{MEDICAL_DISCLAIMER}\n\nI encountered an error while generating a response. Please try again."
     
-    def chat(self, query: str, top_k: int = None, return_details: bool = False) -> Dict:
+    def chat(
+        self,
+        query: str,
+        top_k: int = None,
+        return_details: bool = False,
+        conversation_context: str = ""
+    ) -> Dict:
         """Main chat method: process query and return response.
         
         Args:
             query: User query
             top_k: Number of documents to retrieve
             return_details: Whether to return detailed execution info
+            conversation_context: Optional prior chat context to resolve follow-up questions
         
         Returns:
             Dictionary with response and optional details
@@ -249,7 +256,14 @@ class MedicalRAGAgent:
         
         try:
             # Step 1: Retrieval
-            documents, scores, doc_ids = self.retrieve(query, top_k)
+            retrieval_query = query
+            if conversation_context:
+                retrieval_query = (
+                    f"{query}\n\n"
+                    f"Conversation context from the same chat:\n{conversation_context}"
+                )
+
+            documents, scores, doc_ids = self.retrieve(retrieval_query, top_k)
             
             if not documents:
                 logger.warning("No documents retrieved")
@@ -284,7 +298,8 @@ class MedicalRAGAgent:
                         for doc_id, doc, score in zip(doc_ids, documents, scores)
                     ],
                     "reasoning": reasoning,
-                    "query": query
+                    "query": query,
+                    "conversation_context": conversation_context
                 })
             
             return result
