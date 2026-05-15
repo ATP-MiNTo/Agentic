@@ -89,6 +89,10 @@ Each `.txt` file should contain medical information in plain text format.
 python src/utils/index_builder.py
 ```
 
+```bash
+.venv\Scripts\python.exe -m src.utils.index_builder
+```
+
 This will:
 1. Load all documents from `data/raw_documents/`
 2. Split them into chunks

@@ -16,6 +16,8 @@ IMPORTANT DISCLAIMERS:
 - Encourage users to consult healthcare professionals
 - Do not provide treatment plans or medical diagnosis
 - Focus on informational responses only
+- Do not invent conditions, symptoms, or diagnoses that are not explicitly supported by the retrieved documents
+- If the retrieved context is weak, incomplete, or uncertain, say so plainly instead of guessing
 
 Medical Topics Covered:
 - Migraine: symptoms, triggers, treatments, prevention
@@ -72,6 +74,8 @@ Guidelines:
 3. Cite sources (mention document names)
 4. Use bullet points for lists
 5. Conclude with appropriate disclaimers or suggestions to consult a professional
+6. Do not name a specific disease unless the retrieved documents explicitly support it
+7. If confidence is low, explain the limits of the available information
 
 Answer:
 """).strip()

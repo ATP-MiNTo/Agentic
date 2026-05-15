@@ -1,5 +1,12 @@
 # Gradio web interface for Medical RAG
-import gradio as gr
+try:
+    import gradio as gr
+except Exception as e:
+    raise RuntimeError(
+        "Failed to import gradio (or its audio dependencies). On Windows, this often requires extra audio packages or compatible wheels.\n"
+        "Quick fixes: install audio support in the venv (e.g. 'pip install pyaudio') or use a Python version with compatible wheels (3.11).\n"
+        f"Original import error: {e}"
+    )
 from typing import Dict
 import config
 from src.agent.rag_agent import MedicalRAGAgent
@@ -7,6 +14,32 @@ from src.utils.index_builder import FAISSIndexBuilder
 from src.utils.logger import get_logger
 
 logger = get_logger()
+
+
+def _patch_gradio_template_response() -> None:
+    """Patch Gradio's template response helper for Starlette API compatibility."""
+    try:
+        import gradio.routes as gradio_routes
+    except Exception:
+        return
+
+    templates = getattr(gradio_routes, "templates", None)
+    if templates is None or getattr(templates, "_copilot_template_response_patched", False):
+        return
+
+    original_template_response = templates.TemplateResponse
+
+    def compat_template_response(*args, **kwargs):
+        if len(args) >= 2 and isinstance(args[0], str) and isinstance(args[1], dict) and "request" in args[1]:
+            template_name = args[0]
+            context = args[1]
+            request = context["request"]
+            return original_template_response(request, template_name, context, **kwargs)
+
+        return original_template_response(*args, **kwargs)
+
+    templates.TemplateResponse = compat_template_response
+    templates._copilot_template_response_patched = True
 
 
 class GradioApp:
@@ -52,20 +85,20 @@ class GradioApp:
             Dictionary with formatted outputs for UI
         """
         if not query or not query.strip():
-            return {
-                "response": "Please enter a medical question.",
-                "retrieval": "",
-                "reasoning": "",
-                "logs": ""
-            }
+            return (
+                "Please enter a medical question.",
+                "",
+                "",
+                ""
+            )
 
         if self.agent is None:
-            return {
-                "response": "No disease corpus is loaded. Please load one first.",
-                "retrieval": "",
-                "reasoning": "",
-                "logs": "No active agent"
-            }
+            return (
+                "No disease corpus is loaded. Please load one first.",
+                "",
+                "",
+                "No active agent"
+            )
         
         logger.info(f"Processing query from web UI: {query[:50]}...")
         
@@ -73,12 +106,12 @@ class GradioApp:
             result = self.agent.chat(query, top_k=top_k, return_details=True)
             
             if not result["success"]:
-                return {
-                    "response": result["response"],
-                    "retrieval": "",
-                    "reasoning": "",
-                    "logs": f"Error: {result.get('error', 'Unknown error')}"
-                }
+                return (
+                    result["response"],
+                    "",
+                    "",
+                    f"Error: {result.get('error', 'Unknown error')}"
+                )
             
             # Format retrieval details
             retrieval_text = "### Retrieved Documents\n\n"
@@ -99,21 +132,21 @@ class GradioApp:
             logs_text += f"- Documents Retrieved: {len(result['retrieved_documents'])}\n"
             logs_text += f"- Execution Time: {result['execution_time']:.2f}s\n"
             
-            return {
-                "response": result["response"],
-                "retrieval": retrieval_text,
-                "reasoning": reasoning_text,
-                "logs": logs_text
-            }
+            return (
+                result["response"],
+                retrieval_text,
+                reasoning_text,
+                logs_text
+            )
             
         except Exception as e:
             logger.error(f"Error processing query: {str(e)}")
-            return {
-                "response": f"An error occurred: {str(e)}",
-                "retrieval": "",
-                "reasoning": "",
-                "logs": f"Error: {str(e)}"
-            }
+            return (
+                f"An error occurred: {str(e)}",
+                "",
+                "",
+                f"Error: {str(e)}"
+            )
     
     def build_ui(self):
         """Build Gradio interface."""
@@ -226,24 +259,24 @@ class GradioApp:
             submit_btn.click(
                 fn=self.process_query,
                 inputs=[query_input, top_k_slider],
-                outputs={
-                    "response": response_output,
-                    "retrieval": retrieval_output,
-                    "reasoning": reasoning_output,
-                    "logs": logs_output
-                }
+                outputs=[
+                    response_output,
+                    retrieval_output,
+                    reasoning_output,
+                    logs_output
+                ]
             )
             
             # Allow Enter key to submit
             query_input.submit(
                 fn=self.process_query,
                 inputs=[query_input, top_k_slider],
-                outputs={
-                    "response": response_output,
-                    "retrieval": retrieval_output,
-                    "reasoning": reasoning_output,
-                    "logs": logs_output
-                }
+                outputs=[
+                    response_output,
+                    retrieval_output,
+                    reasoning_output,
+                    logs_output
+                ]
             )
 
             load_button.click(
@@ -272,6 +305,7 @@ def main():
     """Main entry point for web UI."""
     try:
         logger.info("Starting Gradio web interface...")
+        _patch_gradio_template_response()
         
         app = GradioApp(default_disease=config.DEFAULT_DISEASE)
         ui = app.build_ui()

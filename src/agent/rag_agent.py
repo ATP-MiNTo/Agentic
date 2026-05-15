@@ -78,6 +78,7 @@ class MedicalRAGAgent:
         """
         if top_k is None:
             top_k = config.TOP_K
+        min_score = getattr(config, "RETRIEVAL_MIN_SCORE", 0.0)
         
         logger.debug(f"Retrieving top {top_k} documents for query")
         start_time = time.time()
@@ -107,6 +108,12 @@ class MedicalRAGAgent:
                 if metadata_idx in self.metadata:
                     doc_id = self.metadata[metadata_idx]["id"]
                     content = self.metadata[metadata_idx]["content"]
+
+                    if similarity < min_score:
+                        logger.debug(
+                            f"Skipping {doc_id} below score threshold ({similarity:.4f} < {min_score:.4f})"
+                        )
+                        continue
                     
                     documents.append(content)
                     scores.append(similarity)
@@ -247,7 +254,7 @@ class MedicalRAGAgent:
             if not documents:
                 logger.warning("No documents retrieved")
                 return {
-                    "response": "I couldn't find relevant medical information to answer your question.",
+                    "response": f"{MEDICAL_DISCLAIMER}\n\nI couldn't find sufficiently relevant medical information to answer your question safely.",
                     "success": False
                 }
             

@@ -16,7 +16,7 @@ for dir_path in [DATA_DIR, FAISS_INDEX_DIR, LOG_DIR]:
 # ==================== MODEL CONFIGURATION ====================
 
 # LLM Configuration
-LLM_MODEL = "llama3.1:8b"  # Via Ollama
+LLM_MODEL = "llama3.1"  # Via Ollama
 LLM_ENDPOINT = "http://localhost:11434"  # Ollama local endpoint
 LLM_TIMEOUT = 60  # seconds
 
@@ -28,6 +28,7 @@ EMBEDDING_DIMENSION = 384  # Dimension of embeddings
 
 # Retrieval Settings
 TOP_K = 5  # Number of documents to retrieve
+RETRIEVAL_MIN_SCORE = 0.60  # Minimum similarity required to use a retrieved chunk
 CHUNK_SIZE = 300  # Approximate words per chunk
 CHUNK_OVERLAP = 50  # Overlap between chunks in words
 
@@ -66,7 +67,7 @@ AUTO_REBUILD_THRESHOLD_DAYS = 7
 # ==================== UI CONFIGURATION ====================
 
 # Gradio UI Settings
-GRADIO_SERVER_NAME = "0.0.0.0"
+GRADIO_SERVER_NAME = "127.0.0.1"
 GRADIO_SERVER_PORT = 7860
 GRADIO_SHARE = False  # Share link for public access
 GRADIO_DEBUG = False  # Debug mode
