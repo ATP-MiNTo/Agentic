@@ -1,14 +1,35 @@
-[PLACEHOLDER - ADD CONTENT HERE]
-
 Title: Diabetes Overview
-Source: [Add source]
-Last Updated: [Add date]
+Source:
+- https://www.who.int/news-room/fact-sheets/detail/diabetes
+- https://www.cdc.gov/diabetes/about/index.html
+
+Last Updated: 2026
 
 ---
 
-Add content about:
-- Definition of diabetes
-- Type 1 vs Type 2 differences
-- Risk factors
-- Statistics and prevalence
-- Impact on the body
+Definition of Diabetes
+- Diabetes is a chronic disease that occurs when the body cannot properly regulate blood sugar levels.
+- This happens when the body does not produce enough insulin or cannot effectively use the insulin it produces.
+- High blood sugar levels over time can lead to serious health complications affecting many parts of the body.
+
+Type 1 vs Type 2 Differences
+- Type 1 diabetes is an autoimmune condition in which the immune system attacks the insulin-producing cells in the pancreas.
+- People with Type 1 diabetes usually require insulin therapy for life.
+- Type 2 diabetes occurs when the body becomes resistant to insulin or does not produce enough insulin.
+- Type 2 diabetes is more common and is often linked to lifestyle factors such as obesity and lack of physical activity.
+
+Risk Factors
+- Family history can increase the risk of developing diabetes.
+- Obesity, unhealthy diet, and physical inactivity are common risk factors.
+- High blood pressure and age can also increase risk.
+- For Type 1 diabetes, genetics and autoimmune factors may play an important role.
+
+Statistics and Prevalence
+- Diabetes affects millions of people worldwide and continues to increase each year.
+- Type 2 diabetes accounts for the majority of diabetes cases.
+- The growing prevalence of diabetes is associated with changes in lifestyle, aging populations, and increasing obesity rates.
+
+Impact on the Body
+- Diabetes can affect many organs and systems in the body.
+- High blood sugar levels may damage blood vessels, nerves, kidneys, eyes, and the heart.
+- If not properly managed, diabetes can lead to cardiovascular disease, kidney failure, nerve damage, and vision problems.

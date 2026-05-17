@@ -1,15 +1,39 @@
-[PLACEHOLDER - ADD CONTENT HERE]
-
 Title: Diabetes Management
-Source: [Add source]
-Last Updated: [Add date]
+Source: 
+- https://www.niddk.nih.gov/health-information/diabetes/overview/managing-diabetes
+- https://www.who.int/southeastasia/activities/management-of-diabetes
+
+Last Updated: 2026
 
 ---
 
-Add content about:
-- Blood sugar monitoring
-- Insulin therapy
-- Oral medications
-- Diet and nutrition
-- Exercise recommendations
-- Regular check-ups
+Blood Sugar Monitoring
+- Blood sugar monitoring is important because it helps track whether blood glucose levels are within a healthy range.
+- Patients can use finger-prick glucose meters or continuous glucose monitoring devices.
+- Regular monitoring helps prevent complications and allows doctors to adjust treatment plans effectively.
+
+Insulin Therapy
+- Insulin therapy is an essential treatment for some people with diabetes, especially those with Type 1 diabetes.
+- Insulin helps control blood sugar levels and keeps them within a normal range.
+- Insulin is available in different forms such as injections and insulin pens.
+- Patients should use insulin according to their doctor’s instructions.
+
+Oral Medications
+- Oral medications for diabetes help lower blood sugar levels and improve the body’s ability to use insulin.
+- Doctors prescribe different medications depending on the patient’s condition.
+- Taking medications regularly and correctly is important for effective diabetes management.
+
+Diet and Nutrition
+- Healthy eating plays a major role in diabetes management.
+- People with diabetes should reduce sugary foods, high-fat foods, and processed foods while increasing vegetables, fruits, and whole grains.
+- Maintaining balanced meals and controlling portion sizes can help regulate blood sugar levels.
+
+Exercise Recommendations
+- Regular exercise helps control blood sugar levels and improves insulin sensitivity.
+- Recommended activities include walking, jogging, cycling, and swimming.
+- People with diabetes should aim for at least 150 minutes of moderate exercise each week.
+
+Regular Check-ups
+- Regular medical check-ups help monitor diabetes and prevent complications.
+- Patients should routinely check blood sugar levels, blood pressure, kidney function, and eye health.
+- Visiting healthcare professionals regularly allows for better treatment adjustments and overall health management.

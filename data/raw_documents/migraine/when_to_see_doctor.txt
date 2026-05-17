@@ -1,14 +1,29 @@
-[PLACEHOLDER - ADD CONTENT HERE]
-
 Title: When to See a Doctor for Migraine
-Source: [Add source]
-Last Updated: [Add date]
+Source: Migraine.txt
+Last Updated: 2026
 
 ---
 
-Add content about:
-- Red flags and warning signs
-- When to seek emergency care
-- Recommended specialist (neurologist)
-- Importance of medical consultation
-- Headache diary recommendation
+Red Flags and Warning Signs
+- Sudden severe headaches should be checked.
+- Headaches after a head injury need medical attention.
+- Vision problems, confusion, difficulty speaking, weakness, or numbness are warning signs.
+- Headaches with fever and a stiff neck should not be ignored.
+
+When to Seek Emergency Care
+- Emergency care should be sought if a headache is extremely sudden and severe, sometimes described as the worst headache of your life.
+- Seek emergency help if migraines are associated with seizures, loss of consciousness, chest pain, or stroke-like symptoms such as facial drooping or difficulty moving parts of the body.
+
+Recommended Specialist (Neurologist)
+- People with frequent, severe, or unusual migraines may benefit from seeing a neurologist.
+- A neurologist can help diagnose migraine types, recommend treatments, and rule out other neurological conditions.
+
+Importance of Medical Consultation
+- Medical consultation is important because migraines can significantly affect daily life.
+- Migraines may sometimes be confused with other serious health conditions.
+- A doctor can provide diagnosis, personalized treatment plans, and recommendations to reduce frequency and severity.
+
+Headache Diary Recommendation
+- Keeping a headache diary can help identify migraine triggers and patterns.
+- Useful details include when migraines occur, symptoms, food intake, stress levels, medications used, and possible triggers.
+- This information can improve migraine management and treatment decisions.

@@ -1,16 +1,35 @@
-[PLACEHOLDER - ADD CONTENT HERE]
-
 Title: Diabetes Complications
-Source: [Add source]
-Last Updated: [Add date]
+Source: 
+- https://pmc.ncbi.nlm.nih.gov/articles/PMC5866895/
+- https://idf.org/about-diabetes/complications/
+
+Last Updated: 2026
 
 ---
 
-Add content about:
-- Short-term complications
-- Long-term complications
-- Heart disease and diabetes
-- Kidney disease
-- Neuropathy
-- Retinopathy
-- Prevention strategies
+Short-term Complications
+- Short-term complications of diabetes can happen suddenly and may become serious if not treated quickly.
+- These include hypoglycemia, hyperglycemia, and diabetic ketoacidosis.
+- Symptoms may include dizziness, confusion, thirst, frequent urination, and fatigue.
+- Proper monitoring of blood glucose levels can help prevent these complications.
+
+Long-term Complications
+- Long-term complications develop gradually when blood sugar levels remain uncontrolled for a long period.
+- Diabetes can damage blood vessels and organs, leading to heart disease, kidney disease, nerve damage, and eye problems.
+- Maintaining healthy blood sugar levels can reduce the risk of these conditions.
+
+Heart Disease and Diabetes
+- People with diabetes are more likely to develop cardiovascular diseases such as heart attack and stroke.
+- High blood sugar can damage blood vessels and increase blood pressure and cholesterol levels.
+- Regular exercise, healthy eating, and medication can help lower the risk of heart disease.
+
+Kidney Disease
+- Diabetes is one of the leading causes of kidney disease.
+- High blood sugar damages the small blood vessels in the kidneys, reducing their ability to filter waste from the blood.
+- Early signs may include swelling, fatigue, and changes in urination.
+- Regular kidney function tests are important for people with diabetes.
+
+Neuropathy
+- Diabetic neuropathy is nerve damage caused by prolonged high blood sugar levels.
+- It often affects the feet and hands, causing numbness, tingling, pain, or weakness.
+- Proper foot care and blood sugar control can help prevent severe nerve damage.

@@ -1,13 +1,42 @@
-[PLACEHOLDER - ADD CONTENT HERE]
-
 Title: Migraine Overview
-Source: [Add source - WHO, Mayo Clinic, etc.]
-Last Updated: [Add date]
+Source: Migraine.txt
+Last Updated: 2026
 
 ---
 
-Add content about:
-- Definition of migraine
-- Types of migraine
-- Prevalence and statistics
-- Key characteristics
+Definition of Migraine
+- Migraine is a neurological disorder characterized by recurring attacks of moderate to severe headaches.
+- The pain is often throbbing or pulsating and commonly affects one side of the head.
+- Migraine attacks can last from several hours to several days.
+- Symptoms may include nausea, vomiting, and sensitivity to light, sound, or smells.
+- Some people experience aura before the headache begins.
+
+Types of Migraine
+- Migraine without aura is the most common type and does not include warning signs.
+- Migraine with aura includes temporary neurological symptoms such as flashes of light, blind spots, tingling, or speech difficulties.
+- Chronic migraine occurs on 15 or more days per month for at least three months.
+- Menstrual migraine is linked to hormonal changes during the menstrual cycle.
+- Hemiplegic migraine can cause temporary weakness on one side of the body.
+- Retinal migraine causes temporary visual disturbances or vision loss in one eye.
+- Abdominal migraine is more common in children and causes abdominal pain with migraine-related symptoms.
+- Silent migraine includes aura symptoms without a significant headache.
+
+Prevalence and Statistics
+- Migraine is one of the most common neurological disorders worldwide.
+- The World Health Organization reports that headache disorders affect about 40% of the global population, with migraine a major contributor to disability.
+- Migraine is more common in females than males.
+- It often begins during puberty or early adulthood.
+- Around 12% of people in the United States experience migraines.
+- Migraine is a leading cause of disability-adjusted life years globally.
+
+Key Characteristics
+- Moderate to severe throbbing or pulsating head pain.
+- Pain often on one side of the head.
+- Sensitivity to light and sound.
+- Nausea and vomiting.
+- Visual disturbances or aura in some people.
+- Symptoms that can last from 4 to 72 hours.
+- Pain that worsens with physical activity.
+- Recurring episodes that can interfere with daily life, work, school, and social activities.
+- Migraine attacks may move through prodrome, aura, headache, and postdrome phases.
+- Common triggers include stress, hormonal changes, lack of sleep, certain foods, weather changes, bright lights, and strong odors.

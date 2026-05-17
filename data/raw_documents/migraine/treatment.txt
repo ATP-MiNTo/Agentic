@@ -1,15 +1,35 @@
-[PLACEHOLDER - ADD CONTENT HERE]
-
 Title: Migraine Treatment
-Source: [Add source]
-Last Updated: [Add date]
+Source: Migraine.txt
+Last Updated: 2026
 
 ---
 
-Add content about:
-- Over-the-counter medications
-- Prescription medications
-- Acute treatment strategies
-- Prevention medications
-- Non-drug therapies
-- Lifestyle modifications
+Over-the-counter Medications
+- Over-the-counter medications are commonly used to relieve mild to moderate migraine symptoms.
+- Common examples include acetaminophen, ibuprofen, and aspirin.
+- These medications may help reduce pain and discomfort when taken early during a migraine attack.
+
+Prescription Medications
+- Prescription medications are often recommended for severe or frequent migraines.
+- Doctors may prescribe triptans, anti-nausea medications, or other migraine-specific drugs.
+- These medicines can help reduce symptoms and improve daily functioning.
+
+Acute Treatment Strategies
+- Acute treatment focuses on stopping symptoms after they begin.
+- People are often advised to rest in a quiet, dark room, stay hydrated, and take medication as soon as symptoms appear.
+- Early treatment may reduce the severity and duration of attacks.
+
+Prevention Medications
+- Preventive medications are used to reduce the frequency and intensity of migraine attacks.
+- Examples include blood pressure medications, antidepressants, anti-seizure drugs, and CGRP inhibitors.
+- Preventive treatment is usually considered for people who have frequent migraines.
+
+Non-drug Therapies
+- Non-drug therapies can help manage migraines and improve quality of life.
+- Common approaches include relaxation techniques, acupuncture, massage therapy, biofeedback, and cognitive behavioral therapy.
+- These methods may help reduce stress and migraine triggers.
+
+Lifestyle Modifications
+- Healthy lifestyle habits can help prevent migraines.
+- Important habits include getting enough sleep, exercising regularly, eating balanced meals, drinking enough water, and avoiding known triggers such as stress, alcohol, or certain foods.
+- Keeping a migraine diary may help identify triggers and patterns.

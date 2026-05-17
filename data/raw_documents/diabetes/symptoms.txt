@@ -1,14 +1,31 @@
-[PLACEHOLDER - ADD CONTENT HERE]
-
 Title: Diabetes Symptoms
-Source: [Add source]
-Last Updated: [Add date]
+Source:
+- https://www.mayoclinic.org/diseases-conditions/diabetes/symptoms-causes/syc-20371444
+- https://www.bangkokhospital.com/en/pattaya/content/diabetes-symptoms-risk-bph
+Last Updated: 2026
 
 ---
 
-Add content about:
-- Early warning signs
-- Common symptoms for Type 1
-- Common symptoms for Type 2
-- Symptoms in children
-- When symptoms appear
+Early Warning Signs
+- Early warning signs of diabetes may include increased thirst, frequent urination, unusual hunger, fatigue, blurred vision, and unexplained weight loss.
+- Some people may also experience slow-healing wounds or frequent infections.
+- Recognizing these signs early can help prevent serious complications.
+
+Common Symptoms for Type 1
+- Type 1 diabetes symptoms usually develop quickly, often within a few weeks.
+- Common symptoms include extreme thirst, frequent urination, sudden weight loss, fatigue, and increased hunger.
+- Some patients may also experience nausea or diabetic ketoacidosis, which requires immediate medical attention.
+
+Common Symptoms for Type 2
+- Type 2 diabetes symptoms often develop slowly and may go unnoticed for years.
+- Common symptoms include tiredness, blurred vision, increased thirst, frequent urination, slow-healing cuts, and numbness in the hands or feet.
+- Many people discover they have Type 2 diabetes during routine health check-ups.
+
+Symptoms in Children
+- Children with diabetes may experience excessive thirst, frequent urination, bed-wetting, tiredness, irritability, and weight loss.
+- Parents should seek medical attention if these symptoms appear suddenly or become severe.
+
+When Symptoms Appear
+- Symptoms of Type 1 diabetes usually appear suddenly.
+- Symptoms of Type 2 diabetes develop gradually over time.
+- Some individuals may not notice any symptoms until complications begin to occur.

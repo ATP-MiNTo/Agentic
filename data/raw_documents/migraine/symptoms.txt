@@ -1,15 +1,43 @@
-[PLACEHOLDER - ADD CONTENT HERE]
-
 Title: Migraine Symptoms
-Source: [Add source]
-Last Updated: [Add date]
+Source: Migraine.txt
+Last Updated: 2026
 
 ---
 
-Add content about:
-- Early warning signs (prodrome)
-- Aura symptoms
-- Headache phase symptoms
-- Post-headache phase (postdrome)
-- Typical symptom duration
-- Symptom triggers
+Early Warning Signs (Prodrome)
+- The prodrome phase may begin several hours or up to two days before the headache starts.
+- Common signs include mood changes, fatigue, food cravings, neck stiffness, increased thirst, frequent urination, constipation, difficulty concentrating, and excessive yawning.
+- Recognizing prodrome symptoms may help a person prepare for or manage an upcoming migraine attack.
+
+Aura Symptoms
+- Aura symptoms occur in some people before or during a migraine attack.
+- They usually develop gradually over several minutes and last 5 to 60 minutes.
+- Common visual symptoms include flashing lights, blind spots, zigzag patterns, and blurred vision.
+- Other aura symptoms may include numbness or tingling in the face, arms, or legs, weakness, dizziness, ringing in the ears, and difficulty speaking or concentrating.
+- Aura symptoms are temporary and reversible.
+
+Headache Phase Symptoms
+- Migraine pain is typically throbbing or pulsating and often affects one side of the head.
+- The headache may worsen with physical activity.
+- Common symptoms include nausea, vomiting, and sensitivity to light, sound, smells, or touch.
+- Some people also experience dizziness, blurred vision, or extreme fatigue.
+- The severity can significantly interfere with daily activities and quality of life.
+
+Post-Headache Phase (Postdrome)
+- The postdrome stage is often called a migraine hangover.
+- It may last from several hours to up to 48 hours.
+- Common symptoms include fatigue, weakness, dizziness, difficulty concentrating, body aches, mood changes, and continued sensitivity to light and sound.
+- Some people feel mentally drained or confused, while others may feel temporary relief or mild euphoria.
+
+Typical Symptom Duration
+- Prodrome symptoms may begin 24 to 48 hours before the headache.
+- Aura symptoms generally last between 5 and 60 minutes.
+- The headache phase commonly lasts from 4 to 72 hours if untreated.
+- The postdrome phase can continue for several hours or up to two days.
+- A full migraine attack may span several days from beginning to recovery.
+
+Symptom Triggers
+- Common triggers include emotional stress, hormonal changes, lack of sleep, oversleeping, dehydration, skipped meals, and intense physical activity.
+- Environmental triggers may include bright lights, loud noises, strong smells, and weather changes.
+- Food and beverage triggers can include alcohol, caffeine, chocolate, aged cheese, processed foods, and additives such as monosodium glutamate.
+- Identifying personal triggers may help reduce the frequency of migraine attacks.
