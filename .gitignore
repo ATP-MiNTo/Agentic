@@ -99,3 +99,6 @@ build/
 !data/.gitkeep
 !data/raw_documents/.gitkeep
 !data/faiss_index/.gitkeep
+
+# config.py is edited frequently, but we want to keep it in version control. Ignore the compiled versions.
+config.py
