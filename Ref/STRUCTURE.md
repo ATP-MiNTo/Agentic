@@ -72,9 +72,9 @@ Core retrieval and generation logic.
 
 ### `src/ui/`
 
-The Gradio web app lives here.
+The Flask web app lives here.
 
-- `gradio_app.py` builds the Blocks-based UI.
+- `flask_app.py` builds the web UI.
 - The UI includes a corpus dropdown, top-k control, memory summary, retrieval details, reasoning output, and execution details.
 - The UI keeps a short chat history summary so follow-up questions have context.
 

@@ -6,7 +6,7 @@ import config
 from src.utils.logger import get_logger
 from src.utils.prompt_templates import (
     SYSTEM_PROMPT, REASONING_PROMPT, GENERATION_PROMPT,
-    MEDICAL_DISCLAIMER, format_documents_for_context
+    format_documents_for_context
 )
 from src.agent.embedding_model import EmbeddingModel
 from src.agent.llm_interface import LLMInterface
@@ -221,17 +221,14 @@ class MedicalRAGAgent:
                 temperature=config.TEMPERATURE
             )
             
-            # Add disclaimer to response
-            full_response = f"{MEDICAL_DISCLAIMER}\n\n{response}"
-            
             elapsed = time.time() - start_time
             logger.info(f"Response generated in {elapsed:.2f}s")
             
-            return full_response
+            return response
             
         except Exception as e:
             logger.error(f"Error generating response: {str(e)}")
-            return f"{MEDICAL_DISCLAIMER}\n\nI encountered an error while generating a response. Please try again."
+            return "I encountered an error while generating a response. Please try again."
     
     def chat(
         self,
@@ -268,7 +265,7 @@ class MedicalRAGAgent:
             if not documents:
                 logger.warning("No documents retrieved")
                 return {
-                    "response": f"{MEDICAL_DISCLAIMER}\n\nI couldn't find sufficiently relevant medical information to answer your question safely.",
+                    "response": "I couldn't find sufficiently relevant medical information to answer your question safely.",
                     "success": False
                 }
             

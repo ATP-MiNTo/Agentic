@@ -113,9 +113,9 @@ python main.py --interactive
 ## Current behavior
 
 - `main.py` runs against the full corpus in `data/raw_documents/`.
-- `app.py` opens the Gradio UI defined in `src/ui/gradio_app.py`.
-- The Gradio UI loads a corpus based on the dropdown and rebuilds the FAISS index for that corpus.
-- The default disease corpus is `cancer`.
+- `app.py` opens the Flask UI defined in `src/ui/flask_app.py`.
+- The Flask UI loads a corpus based on the dropdown and rebuilds the FAISS index for that corpus.
+- The default disease corpus is `all`.
 
 ## Troubleshooting
 

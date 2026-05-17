@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medical Chat RAG</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+    <div class="app-container">
+        <div class="page-shell">
+            <header class="page-header">
+                <div>
+                    <div class="header-top">
+                        <h1>🏥 Medical Chat Assistant</h1>
+                        <a href="/disclaimer" class="disclaimer-link">⚠️ Disclaimer</a>
+                    </div>
+                    <p>Chat with the RAG assistant about migraine, diabetes, or cancer. The last few turns stay in memory so you can ask follow-up questions naturally.</p>
+                </div>
+            </header>
+
+            <main class="main-grid">
+                <section class="chat-shell">
+                    <div class="chat-panel">
+                        <div class="chat-panel-header">
+                            <span class="badge">Conversation</span>
+                        </div>
+                        <div id="chatHistory" class="chat-history"></div>
+                    </div>
+
+                    <div class="chat-input-shell">
+                        <textarea id="messageInput" placeholder="Ask a question, then follow up with things like 'what about the symptoms you mentioned?'" rows="2"></textarea>
+                        <div class="button-row">
+                            <button id="sendButton" class="button primary">Send</button>
+                            <button id="clearButton" class="button secondary">New chat</button>
+                        </div>
+                    </div>
+
+                    <div class="panel-group">
+                        <div class="panel-card">
+                            <button class="panel-toggle" type="button" aria-expanded="true" onclick="toggleSection('retrievalSection')">Retrieved documents</button>
+                            <div id="retrievalSection" class="panel-content">No retrieval details yet.</div>
+                        </div>
+
+                        <div class="panel-card">
+                            <button class="panel-toggle" type="button" aria-expanded="false" onclick="toggleSection('reasoningSection')">Reasoning</button>
+                            <div id="reasoningSection" class="panel-content hidden">No reasoning yet.</div>
+                        </div>
+
+                        <div class="panel-card">
+                            <button class="panel-toggle" type="button" aria-expanded="false" onclick="toggleSection('logsSection')">Execution logs</button>
+                            <div id="logsSection" class="panel-content hidden">No queries have been run yet.</div>
+                        </div>
+                    </div>
+
+                    <section class="examples-card">
+                        <div class="examples-header">
+                            <span class="badge small">Example questions</span>
+                        </div>
+                        <table class="examples-table">
+                            <thead>
+                                <tr><th>Message</th><th>Top-K</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr onclick="selectExample('What are the early symptoms of diabetes?')"><td>What are the early symptoms of diabetes?</td><td>5</td></tr>
+                                <tr onclick="selectExample('How is migraine different from a regular headache?')"><td>How is migraine different from a regular headache?</td><td>5</td></tr>
+                                <tr onclick="selectExample('What are cancer risk factors?')"><td>What are cancer risk factors?</td><td>5</td></tr>
+                                <tr onclick="selectExample('When should I see a doctor for a migraine?')"><td>When should I see a doctor for a migraine?</td><td>5</td></tr>
+                                <tr onclick="selectExample('How is Type 2 diabetes managed?')"><td>How is Type 2 diabetes managed?</td><td>5</td></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
+
+                <aside class="sidebar-card">
+                    <div class="sidebar-section">
+                        <div class="sidebar-label">Corpus</div>
+                        <div class="sidebar-info">Switch between disease collections</div>
+                        <select id="diseaseSelector">
+                            {% for disease in disease_options %}
+                            <option value="{{ disease }}" {% if disease == current_disease %}selected{% endif %}>{{ disease }}</option>
+                            {% endfor %}
+                        </select>
+                        <button id="loadButton" class="button secondary">Load corpus</button>
+                        <p class="status-text"><strong>Loaded corpus:</strong> <span id="corpusStatus">{{ current_disease }}</span></p>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <div class="sidebar-label">Top-K</div>
+                        <div class="sidebar-info">How many chunks to retrieve</div>
+                        <div class="slider-row">
+                            <input id="topKSlider" type="range" min="1" max="10" value="{{ default_top_k }}" />
+                            <span id="topKValue">{{ default_top_k }}</span>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-section memory-box">
+                        <div class="sidebar-label">Memory</div>
+                        <pre id="memoryOutput">Memory
+
+No conversation memory yet.</pre>
+                    </div>
+                </aside>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        const history = [];
+        const messageInput = document.getElementById("messageInput");
+        const chatHistory = document.getElementById("chatHistory");
+        const memoryOutput = document.getElementById("memoryOutput");
+        const retrievalSection = document.getElementById("retrievalSection");
+        const reasoningSection = document.getElementById("reasoningSection");
+        const logsSection = document.getElementById("logsSection");
+        const topKSlider = document.getElementById("topKSlider");
+        const topKValue = document.getElementById("topKValue");
+        const corpusStatus = document.getElementById("corpusStatus");
+        const diseaseSelector = document.getElementById("diseaseSelector");
+
+        document.getElementById("sendButton").addEventListener("click", sendMessage);
+        document.getElementById("clearButton").addEventListener("click", clearChat);
+        document.getElementById("loadButton").addEventListener("click", loadCorpus);
+        diseaseSelector.addEventListener("change", loadCorpus);
+        messageInput.addEventListener("keydown", event => {
+            if (event.key === "Enter" && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage();
+            }
+        });
+        topKSlider.addEventListener("input", () => {
+            topKValue.textContent = topKSlider.value;
+        });
+
+        function renderChat() {
+            chatHistory.innerHTML = history.map(([user, assistant]) => {
+                return `
+                    <div class="bubble user-bubble"><strong>You</strong><p>${escapeHtml(user)}</p></div>
+                    <div class="bubble assistant-bubble"><strong>Assistant</strong><p>${escapeHtml(assistant)}</p></div>
+                `;
+            }).join("");
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+        }
+
+        function escapeHtml(value) {
+            return value
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/\"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        async function sendMessage() {
+            const message = messageInput.value.trim();
+            if (!message) {
+                return;
+            }
+
+            const payload = {
+                message,
+                history,
+                top_k: parseInt(topKSlider.value, 10),
+            };
+
+            messageInput.disabled = true;
+            document.getElementById("sendButton").disabled = true;
+
+            try {
+                const response = await fetch("/api/chat", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify(payload),
+                });
+                const result = await response.json();
+                if (!result.success) {
+                    alert(result.error || "Failed to get a response from the server.");
+                    return;
+                }
+
+                history.length = 0;
+                result.history.forEach(item => history.push(item));
+                renderChat();
+                memoryOutput.textContent = result.memory;
+                renderRetrieval(result.retrieved_documents);
+                reasoningSection.textContent = result.reasoning;
+                logsSection.textContent = result.logs;
+                messageInput.value = "";
+            } catch (error) {
+                alert("Unable to communicate with the backend.");
+            } finally {
+                messageInput.disabled = false;
+                document.getElementById("sendButton").disabled = false;
+                messageInput.focus();
+            }
+        }
+
+        function clearChat() {
+            history.length = 0;
+            renderChat();
+            memoryOutput.textContent = "Memory\n\nNo conversation memory yet.";
+            retrievalSection.textContent = "No retrieval details yet.";
+            reasoningSection.textContent = "No reasoning yet.";
+            logsSection.textContent = "No queries have been run yet.";
+            messageInput.value = "";
+        }
+
+        async function loadCorpus() {
+            const disease = diseaseSelector.value;
+            const response = await fetch("/api/load_corpus", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({disease}),
+            });
+            const result = await response.json();
+            if (!result.success) {
+                alert(result.error || "Failed to load corpus.");
+                return;
+            }
+            history.length = 0;
+            renderChat();
+            memoryOutput.textContent = result.memory;
+            retrievalSection.textContent = "No retrieval details yet.";
+            reasoningSection.textContent = "No reasoning yet.";
+            logsSection.textContent = "No queries have been run yet.";
+            corpusStatus.textContent = disease;
+            messageInput.value = "";
+        }
+
+        function renderRetrieval(docs) {
+            if (!docs || docs.length === 0) {
+                retrievalSection.textContent = "No retrieval details yet.";
+                return;
+            }
+            retrievalSection.innerHTML = docs.map(doc => `
+                <div class="doc-card">
+                    <div class="doc-title">${escapeHtml(doc.id)}</div>
+                    <div class="doc-meta">Score: ${(doc.score * 100).toFixed(1)}%</div>
+                    <div class="doc-preview">${escapeHtml(doc.preview)}</div>
+                </div>
+            `).join("");
+        }
+
+        function selectExample(text) {
+            messageInput.value = text;
+            messageInput.focus();
+        }
+
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (!section) return;
+            section.classList.toggle("hidden");
+        }
+
+        renderChat();
+    </script>
+</body>
+</html>
