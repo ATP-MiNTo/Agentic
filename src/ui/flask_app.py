@@ -1,3 +1,5 @@
+# Ensure .env is loaded before anything else
+import src.utils.load_env
 from pathlib import Path
 from typing import Dict, List, Tuple
 

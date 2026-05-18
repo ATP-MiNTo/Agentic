@@ -1,3 +1,5 @@
+# Ensure .env is loaded before anything else
+import src.utils.load_env
 # CLI entry point for Medical RAG
 import argparse
 import time

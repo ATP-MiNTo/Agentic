@@ -9,7 +9,9 @@ from src.utils.prompt_templates import (
     format_documents_for_context
 )
 from src.agent.embedding_model import EmbeddingModel
+
 from src.agent.llm_interface import LLMInterface
+from src.agent.internet_search_agent import InternetSearchAgent
 
 logger = get_logger()
 
@@ -31,6 +33,9 @@ class MedicalRAGAgent:
         self.faiss_index = faiss_index
         self.use_faiss = use_faiss
         self.metadata = {}  # Maps FAISS indices to document metadata
+
+        # Internet search agent for filling information gaps
+        self.internet_search_agent = InternetSearchAgent()
         
         if use_faiss and faiss_index is None:
             self._load_faiss_index()
@@ -237,20 +242,10 @@ class MedicalRAGAgent:
         return_details: bool = False,
         conversation_context: str = ""
     ) -> Dict:
-        """Main chat method: process query and return response.
-        
-        Args:
-            query: User query
-            top_k: Number of documents to retrieve
-            return_details: Whether to return detailed execution info
-            conversation_context: Optional prior chat context to resolve follow-up questions
-        
-        Returns:
-            Dictionary with response and optional details
-        """
+        """Main chat method: process query and return response, with internet search for info gaps."""
         logger.log_query(query)
         start_time = time.time()
-        
+
         try:
             # Step 1: Retrieval
             retrieval_query = query
@@ -261,32 +256,41 @@ class MedicalRAGAgent:
                 )
 
             documents, scores, doc_ids = self.retrieve(retrieval_query, top_k)
-            
+
             if not documents:
                 logger.warning("No documents retrieved")
                 return {
                     "response": "I couldn't find sufficiently relevant medical information to answer your question safely.",
                     "success": False
                 }
-            
+
             # Step 2: Reasoning
             reasoning = self.reason(query, documents, doc_ids)
-            
+
+            # Step 2.5: Internet search if reasoning finds info gap
+            internet_results = self.internet_search_agent.search_if_gap(reasoning, query)
+            if internet_results:
+                logger.info(f"Internet search triggered. {len(internet_results)} results found.")
+                # Optionally, append internet results to context for generation
+                documents.extend([item.get('snippet', '') for item in internet_results])
+                doc_ids.extend([item.get('link', 'internet') for item in internet_results])
+                scores.extend([1.0 for _ in internet_results])
+
             # Step 3: Generation
             response = self.generate_response(query, documents, doc_ids, scores, reasoning)
-            
+
             # Log final response
             logger.log_response(response, tokens=len(response.split()))
-            
+
             elapsed = time.time() - start_time
             logger.log_execution_time("Total query", elapsed)
-            
+
             result = {
                 "response": response,
                 "success": True,
                 "execution_time": elapsed
             }
-            
+
             # Add details if requested
             if return_details:
                 result.update({
@@ -296,11 +300,12 @@ class MedicalRAGAgent:
                     ],
                     "reasoning": reasoning,
                     "query": query,
-                    "conversation_context": conversation_context
+                    "conversation_context": conversation_context,
+                    "internet_results": internet_results
                 })
-            
+
             return result
-            
+
         except Exception as e:
             logger.error(f"Error in chat: {str(e)}")
             return {

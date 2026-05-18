@@ -1,3 +1,5 @@
+# Ensure .env is loaded before anything else
+import src.utils.load_env
 # Web UI launcher
 from src.ui.flask_app import create_app
 import config
